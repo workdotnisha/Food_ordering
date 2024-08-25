@@ -10,8 +10,8 @@ window.onscroll = function (){
 
 //nav hide
 let navbar = document.querySelectorAll('.nav-link');
-let navCollapse = documnet.querySelector('.nav-collapse.collapse');
-navBar.forEach(function(a){
+let navCollapse = document.querySelector('.nav-collapse.collapse');
+navbar.forEach(function(a){
     a.addEventListener('click', function(){
         navCollapse.classList.remove("show");
     })
@@ -20,12 +20,16 @@ navBar.forEach(function(a){
 //counter design
 document.addEventListener('DOMContentLoaded', () => {
     function counter(id, start, end, duration){
-        let obj = document.getElementById(id),
-        current =start,
-        range =end -start,
-        increment = end > start ? 1 : -1,
-        step = Math.abs(Math.floor(duration/range)),
-        timer = setInterval(() => {
+        const obj = document.getElementById(id);
+        if(!obj){
+            console.error(`Element with id "${id}" not found.`);
+            return;
+        }
+        let current = start;
+        const range = end - start;
+        const increment = end > start ? 1 : -1;
+        const step = Math.abs(Math.floor(duration/range));
+        const timer = setInterval(() => {
             current += increment;
             obj.textContent = current;
             if(current == end){

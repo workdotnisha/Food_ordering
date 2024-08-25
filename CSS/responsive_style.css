@@ -34,8 +34,14 @@
         font-size: 2rem;
         line-height: 2.0625rem;
     }
-
-    top banner{
+    
+    /* top banner */
+    .top-banner{
         padding: 10.875rem 0 9.375rem;
+    }
+    /* story-section */
+    .story-section{
+        height:auto;
+        padding: 3rem 0;
     }
 }
